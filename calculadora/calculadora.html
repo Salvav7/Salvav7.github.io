@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculadora</title>
+  </head>
+  <body>
+    <h1>Calculadora</h1>
+    <input type="text" id="resultado" disabled>
+    <br>
+    <button onclick="calcular('7')">7</button>
+    <button onclick="calcular('8')">8</button>
+    <button onclick="calcular('9')">9</button>
+    <button onclick="calcular('+')">+</button>
+    <br>
+    <button onclick="calcular('4')">4</button>
+    <button onclick="calcular('5')">5</button>
+    <button onclick="calcular('6')">6</button>
+    <button onclick="calcular('-')">-</button>
+    <br>
+    <button onclick="calcular('1')">1</button>
+    <button onclick="calcular('2')">2</button>
+    <button onclick="calcular('3')">3</button>
+    <button onclick="calcular('*')">*</button>
+    <br>
+    <button onclick="calcular('0')">0</button>
+    <button onclick="calcular('.')">.</button>
+    <button onclick="borrar()">C</button>
+    <button onclick="calcular('/')">/</button>
+    <br>
+    <button onclick="igual()">=</button>
+
+    <script>
+      let operacion = "";
+
+      function calcular(valor) {
+        operacion += valor;
+        document.getElementById("resultado").value = operacion;
+      }
+
+      function borrar() {
+        operacion = "";
+        document.getElementById("resultado").value = "";
+      }
+
+      function igual() {
+        let resultado = eval(operacion);
+        document.getElementById("resultado").value = resultado;
+        operacion = "";
+      }
+    </script>
+  </body>
+</html>
+
