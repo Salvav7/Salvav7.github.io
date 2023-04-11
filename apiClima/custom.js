@@ -1,4 +1,4 @@
-const result = document.querySelector('.result');
+iconst result = document.querySelector('.result');
 const form = document.querySelector('.get-weather');
 const nameCity = document.querySelector('#city');
 const nameCountry = document.querySelector('#country');
@@ -16,7 +16,7 @@ form.addEventListener('submit', (e) => {
 
 function callAPI(city, country){
     const apiId = 'c9e414748650dcf7e0905a8ec2efead5';
-    const url = `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apiId}`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apiId}`;
 
     fetch(url)
         .then(data => {
