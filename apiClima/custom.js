@@ -7,7 +7,7 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
 
     if (nameCity.value === '' || nameCountry.value === '') {
-        showError('Ambos campos son obligatorios...');
+        showError('Complete ambos campos');
         return;
     }
 
@@ -24,12 +24,11 @@ function callAPI(city, country){
         })
         .then(dataJSON => {
             if (dataJSON.cod === '404') {
-                showError('Ciudad no encontrada...');
+                showError('Ciudad no encontrada');
             } else {
                 clearHTML();
                 showWeather(dataJSON);
             }
-            //console.log(dataJSON);
         })
         .catch(error => {
             console.log(error);
@@ -54,11 +53,7 @@ function showWeather(data){
 
     result.appendChild(content);
 
-    /* console.log(name);
-    console.log(temp);
-    console.log(temp_max);
-    console.log(temp_min);
-    console.log(arr.icon); */
+    
 }
 
 function showError(message){
